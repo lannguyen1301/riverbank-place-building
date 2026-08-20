@@ -4309,8 +4309,7 @@
 
                           <div class="swiper-slide offh-col col col-2 swiper-slide-prev" role="group"
                             aria-label="1 / 52">
-                            <div class="dist">
-                              <a class="dist-link" href="van-phong-cho-thue-phuong-tan-dinh.html"
+                            <div class="dist"><a class="dist-link" href="van-phong-cho-thue-phuong-tan-dinh.html"
                                 title="Cho thuê văn phòng Phường Tân Định Quận 1">
                               </a>
                               <div class="dist-img">
@@ -4324,9 +4323,8 @@
                                 <p class="tt">Phường Tân Định</p>
                                 <div class="inner">
                                   <p class="txt">112<sup>+</sup> Toà nhà</p>
-                                  <div class="icon">
-                                    <img src="./template/Default/assets/images/arr.png" alt="image description"
-                                      loading="lazy" width="auto" height="auto">
+                                  <div class="icon"> <img src="./template/Default/assets/images/arr.png"
+                                      alt="image description" loading="lazy" width="auto" height="auto">
                                   </div>
                                 </div>
                               </div>
@@ -4335,8 +4333,7 @@
 
                           <div class="swiper-slide offh-col col col-2 swiper-slide-visible swiper-slide-active"
                             role="group" aria-label="2 / 52">
-                            <div class="dist">
-                              <a class="dist-link" href="van-phong-cho-thue-phuong-sai-gon.html"
+                            <div class="dist"><a class="dist-link" href="van-phong-cho-thue-phuong-sai-gon.html"
                                 title="Cho thuê văn phòng Phường Sài Gòn Quận 1">
                               </a>
                               <div class="dist-img">
@@ -4360,8 +4357,7 @@
 
                           <div class="swiper-slide offh-col col col-2 swiper-slide-visible swiper-slide-next"
                             role="group" aria-label="3 / 52">
-                            <div class="dist">
-                              <a class="dist-link" href="van-phong-cho-thue-phuong-ben-thanh.html"
+                            <div class="dist"><a class="dist-link" href="van-phong-cho-thue-phuong-ben-thanh.html"
                                 title="Cho thuê văn phòng Phường Bến Thành Quận 1">
                               </a>
                               <div class="dist-img">
@@ -4375,8 +4371,7 @@
                                 <p class="tt">Phường Bến Thành</p>
                                 <div class="inner">
                                   <p class="txt">48<sup>+</sup> Toà nhà</p>
-                                  <div class="icon">
-                                    <img src="./template/Default/assets/images/arr.png"
+                                  <div class="icon"> <img src="./template/Default/assets/images/arr.png"
                                       alt="image description" loading="lazy" width="auto" height="auto">
                                   </div>
                                 </div>
@@ -5527,8 +5522,145 @@
           </div>
         </div>
       </section>
+
     </div>
     <!-- văn phòng theo phường mới -->
+
+    <!-- <script defer>
+      document.addEventListener("DOMContentLoaded", async function () {
+        try {
+          const response = await fetch('../gettygia.html');
+          const data = await response.json();
+          if (data.sell) {
+            console.log('Giá Sell của USD:', data.sell);
+            const usdPriceInput = document.getElementById('tygiaUSD');
+            if (usdPriceInput)
+              usdPriceInput.value = data.sell;
+            const usdPriceLabel = document.getElementById('lbltygiaUSD');
+            if (usdPriceLabel)
+              usdPriceLabel.textContent = data.sell;
+          } else {
+            console.error('Không nhận được giá USD hợp lệ:', data.error || 'Không rõ lỗi');
+          }
+        } catch (error) {
+          console.error('Lỗi khi lấy dữ liệu từ /gettygia.html:', error);
+        }
+      });
+    </script>
+    <script defer>
+      const txtDientich = document.getElementById('txtdientich');
+      const giathueUSD = document.getElementById('giathueUSD').value;
+      const tygiaUSD = document.getElementById('tygiaUSD').value;
+      const lblgiaUSD = document.getElementById('lblgiaUSD');
+      const lblgiaVND = document.getElementById('lblgiaVND');
+      const lblgiaTCNT = document.getElementById('lblgiaTCNT');
+      const lbltygiaUSD = document.getElementById('lbltygiaUSD');
+      const hang_vp = document.getElementById('hangvp').value;
+      lbltygiaUSD.textContent = tygiaUSD;
+      txtDientich.addEventListener('input', () => {
+        const dienTich = parseFloat(txtDientich.value);
+        if (isNaN(dienTich)) {
+          lblgiaUSD.textContent = '';
+          lblgiaVND.textContent = '';
+          lblgiaTCNT.textContent = '';
+          return;
+        }
+        if (dienTich < 0) {
+          alert('Vui lòng nhập diện tích là số dương');
+          lblgiaUSD.textContent = '';
+          lblgiaVND.textContent = '';
+          lblgiaTCNT.textContent = '';
+          return;
+        } else {
+          const tongGiaUSD = dienTich * giathueUSD;
+          let so = (document.getElementById('tygiaUSD').value);
+          so = so.replace(/,/g, '');
+          let soNguyen = parseInt(so);
+          const tongGiaVND = tongGiaUSD * soNguyen;
+          lblgiaUSD.textContent = `= ${tongGiaUSD.toLocaleString()} USD`;
+          lblgiaVND.textContent = `= ${tongGiaVND.toLocaleString('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+          })}`;
+          let dongiaTCNT = 2000000;
+          if (hang_vp == 'A' || hang_vp == 'a') {
+            dongiaTCNT = 5000000;
+          }
+          if (hang_vp == 'B' || hang_vp == 'b') {
+            dongiaTCNT = 4000000;
+          }
+          const chiphiTCNT = dienTich * dongiaTCNT;
+          lblgiaTCNT.textContent = `${chiphiTCNT.toLocaleString('vi-VN', {
+            style: 'currency',
+            currency: 'VND'
+          })}`;
+        }
+      }
+      );
+    </script>
+    <script type="text/javascript" src="./template/Default/js2024/jquery.raty.js"></script>
+    <script type="text/javascript" defer>
+      id = '1878';
+      ln = 'content';
+      $.fn.raty.defaults.path = './template/Default/assets/images';
+      $.fn.raty.defaults.readOnly = '';
+      $('#star').raty({
+        score: "4.8",
+        click: function (score, evt) {
+          $.post(root + 'rate', {
+            'rate': score,
+            'id': id,
+            'ln': ln
+          }, function (data) {
+            alert('Cảm ơn bạn đã bình chọn!');
+            window.location.reload();
+            $('#star').raty({
+              score: score,
+              readOnly: true
+            });
+          })
+        },
+        half: true,
+        starOff: 'star-off-big.png',
+        starOn: 'star-on-big.png'
+      });
+    </script>
+    <script>
+      const ele_show_dtthue_nangcao = document.querySelector('#show_dtthue_nangcao');
+      const ele_btn_show_dtthue_nangcao = document.getElementById('btnShowDutoanDTthue');
+      const ele_btn_show_chiphinoithat_nangcao = document.getElementById('btnShowDutoanCPnoithat');
+      const ele_tinhdientichthue = document.getElementById('tinhdientichthue');
+      const ele_tinhchiphinoithat = document.getElementById('tinhchiphinoithat');
+      let isOpen = false;
+      let isOpen_1 = false;
+      ele_show_dtthue_nangcao.addEventListener('click', () => {
+        if (!isOpen) {
+          ele_tinhdientichthue.style.display = 'block';
+        } else {
+          ele_tinhdientichthue.style.display = 'none';
+        }
+        isOpen = !isOpen;
+      }
+      );
+      ele_btn_show_dtthue_nangcao.addEventListener('click', () => {
+        if (!isOpen) {
+          ele_tinhdientichthue.style.display = 'block';
+        } else {
+          ele_tinhdientichthue.style.display = 'none';
+        }
+        isOpen = !isOpen;
+      }
+      );
+      ele_btn_show_chiphinoithat_nangcao.addEventListener('click', () => {
+        if (!isOpen_1) {
+          ele_tinhchiphinoithat.style.display = 'block';
+        } else {
+          ele_tinhchiphinoithat.style.display = 'none';
+        }
+        isOpen_1 = !isOpen_1;
+      }
+      );
+    </script> -->
   </main>
 
   <!-- văn phòng theo quận footer -->
@@ -6036,7 +6168,7 @@
   <!-- script hide show nội dung OSG có thì xoá đi thay bằng của OSG -->
   <script src="./template/Default/js/hideShow.js"></script>
 
-  <!-- Nếu OSG có rồi thì xoá đi thay bằng của OSG -->
+  <!-- Nếu OSG có rồi thì xoá đi thay bằng của  -->
   <script>
     // Kích hoạt hiệu ứng cuộn trang AOS
     if (typeof AOS !== 'undefined') {
