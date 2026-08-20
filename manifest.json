@@ -1,0 +1,38 @@
+{
+    "id": "/home",
+    "name": "Office Saigon",
+    "short_name": "OfficeSaigon",
+    "start_url": "/home",
+    "description": "Office Saigon Cho thuê văn phòng chuyên nghiệp",
+    "theme_color": "#145e9c",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "template/Default/assets/images/logo-48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "template/Default/assets/images/logo-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "template/Default/assets/images/screenshot-desktop.jpg",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "template/Default/assets/images/screenshot-mobile.jpg",
+            "sizes": "377x760",
+            "type": "image/png"
+        }
+    ]
+}

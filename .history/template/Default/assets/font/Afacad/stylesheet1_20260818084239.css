@@ -1,0 +1,59 @@
+/* Regular */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad Regular'), local('Afacad-Regular'),
+         url('Afacad-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad Italic'), local('Afacad-Italic'),
+         url('Afacad-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad Medium'), local('Afacad-Medium'),
+         url('Afacad-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold (600) */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad SemiBold'), local('Afacad-SemiBold'),
+         url('Afacad-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad Bold'), local('Afacad-Bold'),
+         url('Afacad-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold Italic (700) */
+@font-face {
+    font-family: 'Afacad';
+    src: local('Afacad Bold Italic'), local('Afacad-BoldItalic'),
+         url('Afacad-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}

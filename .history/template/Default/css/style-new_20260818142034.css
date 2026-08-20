@@ -1,0 +1,537 @@
+/* Container bao bọc Rating và 2 Nút (Giữ nguyên) */
+.rating-badge-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 10px 0 20px 0;
+}
+
+.rating-box {
+    display: flex;
+    align-items: center;
+}
+
+.building-badges {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Kiểu dáng chung: BỎ BACKGROUND, VIỀN BO TRÒN MỊN (Pill style) */
+.badge-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 14px;
+    border-radius: 20px;
+    /* Bo tròn viền dạng hình viên thuốc rất hiện đại */
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: transparent !important;
+    /* Bỏ hoàn toàn background */
+    border: 1.5px solid transparent;
+    /* Độ dày viền 1.5px */
+    transition: all 0.3s ease;
+}
+
+/* Nút Hạng A: Viền & chữ màu xanh dương */
+.badge-class-a {
+    border-color: #135e9c;
+    color: #135e9c !important;
+}
+
+/* Hiệu ứng khi di chuột vào Nút Hạng A (Tô nền xanh, chữ trắng) */
+.badge-class-a:hover {
+    background-color: #135e9c !important;
+    color: #ffffff !important;
+}
+
+/* Nút LEED Platinum: Viền & chữ màu xanh lá */
+.badge-leed {
+    border-color: #2aba9d;
+    color: #2aba9d !important;
+}
+
+/* Hiệu ứng khi di chuột vào Nút LEED Platinum (Tô nền xanh lá, chữ trắng) */
+.badge-leed:hover {
+    background-color: #2aba9d !important;
+    color: #ffffff !important;
+}
+
+/* Icon chiếc lá (Tự động ăn theo màu chữ: xanh lá khi thường, trắng khi hover) */
+.badge-leed .icon-leaf {
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+    fill: currentColor;
+}
+
+/* Responsive trên điện thoại */
+@media screen and (max-width: 576px) {
+    .badge-btn {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+}
+
+/* --- UI: KHỐI DỰ TOÁN CHI PHÍ THUÊ --- */
+.cost-estimate-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.estimate-form-group {
+    margin-bottom: 20px;
+}
+
+.estimate-label {
+    display: block;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.estimate-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.estimate-input {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 50px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.estimate-input:focus {
+    border-color: #135e9c;
+    box-shadow: 0 0 0 3px rgba(19, 94, 156, 0.1);
+}
+
+.estimate-unit {
+    position: absolute;
+    right: 15px;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 1.4rem;
+}
+
+/* Khối hiển thị kết quả */
+.estimate-result-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.interior-cost {
+    background: #f0fdf4; /* Nền xanh lá nhạt cho phần nội thất */
+    border-color: #bbf7d0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.result-item:not(:last-child) {
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.result-label {
+    color: #475569;
+    font-size: 1.3rem;
+}
+
+.result-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #135e9c; /* Màu xanh dương chủ đạo */
+}
+
+.interior-cost .result-value {
+    color: #059669; /* Màu xanh lá cho nội thất */
+}
+
+/* Thông tin tỷ giá */
+.exchange-rate-info {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.exchange-rate-info a {
+    color: #64748b;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.exchange-rate-info a:hover {
+    color: #135e9c;
+    text-decoration: underline;
+}
+
+.highlight-rate {
+    color: #135e9c;
+}
+
+/* Nút bấm */
+.estimate-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 1px solid #135e9c;
+    color: #135e9c;
+}
+
+.outline-btn:hover {
+    background: #f1f5f9;
+}
+
+.solid-btn {
+    background: #135e9c;
+    border: 1px solid #135e9c;
+    color: #ffffff;
+}
+
+.solid-btn:hover {
+    background: #0e4b7e;
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+    .estimate-action-buttons {
+        flex-direction: row;
+    }
+    .action-btn {
+        flex: 1;
+    }
+}
+
+/* ========================================= */
+/* CSS DÀNH CHO CỘT TRÁI (SIDEBAR)           */
+/* ========================================= */
+.os-sidebar-card {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    background: #fff;
+    /* Giúp cột trái trượt theo khi cuộn màn hình */
+    position: sticky;
+    top: 20px;
+}
+.os-radius {
+    border-radius: 10px;
+}
+.os-price-block {
+    margin-bottom: 20px;
+    text-align: center;
+}
+.os-label {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.os-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #d32f2f;
+    margin-bottom: 5px;
+}
+.os-desc {
+    font-size: 13px;
+    font-style: italic;
+    color: #777;
+}
+
+.os-quick-specs {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+.os-quick-specs li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: #333;
+}
+.os-icon {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background: #ccc;
+    margin-right: 10px;
+    border-radius: 50%;
+} /* Thay thế bằng icon thực */
+
+.os-action-btns {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.os-btn {
+    padding: 12px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: 0.3s;
+    width: 100%;
+    border: none;
+}
+.os-btn-primary {
+    background: #f26522;
+    color: #fff;
+} /* Nút có background */
+.os-btn-primary:hover {
+    background: #d9561b;
+}
+.os-btn-outline {
+    background: transparent;
+    border: 2px solid #135e9c;
+    color: #135e9c;
+} /* Nút không background */
+.os-btn-outline:hover {
+    background: #f0f6fa;
+}
+
+.os-hotline-box {
+    background: #f0f6fa;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.os-hl-icon {
+    width: 40px;
+    height: 40px;
+    background: #135e9c;
+    border-radius: 50%;
+} /* Thay bằng icon điện thoại */
+.os-hl-number {
+    font-size: 22px;
+    color: #135e9c;
+    margin-bottom: 3px;
+}
+.os-hl-sub {
+    font-size: 13px;
+    color: #555;
+}
+
+/* ========================================= */
+/* CSS DÀNH CHO CỘT PHẢI (MAIN CONTENT)      */
+/* ========================================= */
+.os-main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.os-section {
+    width: 100%;
+}
+.os-box {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    background: #fff;
+}
+.os-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Cấu trúc dòng có gạch dưới */
+.os-list-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+.os-list-row:last-child {
+    border-bottom: none;
+} /* Trừ row cuối */
+.os-list-row.border-none {
+    border-bottom: none;
+    padding: 5px 0;
+} /* Dành riêng cho box nét đứt */
+
+.os-l-left {
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+.os-l-right {
+    text-align: right;
+    color: #222;
+}
+.os-text-justify {
+    line-height: 1.6;
+    text-align: justify;
+    color: #444;
+}
+.os-note-out {
+    font-size: 13px;
+    color: #777;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Cụm công cụ tính toán */
+.os-calc-wrap {
+    border: 1px solid #135e9c;
+    padding: 20px;
+    background: #f9fbff;
+}
+.os-radio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.os-radio-item {
+    display: block;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    background: #fff;
+    transition: 0.2s;
+}
+.os-radio-item span {
+    display: block;
+    padding: 12px;
+    font-weight: 500;
+    color: #444;
+}
+/* Active Radio khi click */
+.os-radio-item input:checked + span {
+    background: #135e9c;
+    color: #fff;
+    border-radius: 9px;
+}
+.os-radio-item:has(input:checked) {
+    border-color: #135e9c;
+}
+
+/* Input nhập diện tích (Trái 250 - Phải m2) */
+.os-input-group {
+    display: flex;
+    border: 1px solid #ccc;
+    background: #fff;
+    overflow: hidden;
+}
+.os-inp-num {
+    flex: 1;
+    border: none;
+    padding: 12px 15px;
+    font-size: 18px;
+    font-weight: bold;
+    outline: none;
+}
+.os-inp-unit {
+    background: #eee;
+    padding: 12px 15px;
+    font-weight: bold;
+    color: #555;
+    border-left: 1px solid #ccc;
+}
+
+.os-dashed-box {
+    border: 1.5px dashed #135e9c;
+    padding: 15px;
+    background: #fff;
+}
+.os-price-usd {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.os-price-vnd {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.os-rate-note {
+    font-size: 13px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Tiện ích */
+.bold {
+    font-weight: bold;
+}
+.t-upper {
+    text-transform: uppercase;
+}
+.txt-red {
+    color: #d32f2f;
+}
+.txt-blue {
+    color: #135e9c;
+}
+.w-100 {
+    width: 100%;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-15 {
+    margin-bottom: 15px;
+}
+.mt-20 {
+    margin-top: 20px;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 950px) {
+    .os-grid-2,
+    .quotep-row.row {
+        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+    .os-sidebar-card {
+        position: relative;
+        top: 0;
+    }
+}
+
+
+

@@ -1,0 +1,151 @@
+    .yt-modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 199;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .yt-modal-content {
+      position: relative;
+      max-width: 800px;
+      width: 90%;
+      background: transparent;
+      animation: zoomIn 0.3s ease;
+    }
+
+    .yt-close {
+      position: fixed;
+      top: 155px;
+      right: 20px;
+      color: white;
+      font-size: 16px;
+      padding: 8px 16px;
+      background: #333;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10001;
+      opacity: 1 !important;
+    }
+
+    .yt-modal-content:hover .yt-close {
+      opacity: 1;
+    }
+
+    .youtube-wrapper {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .youtube-wrapper .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 0, 0, 0.8);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .youtube-wrapper .play-btn::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    .open-link-modal {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .open-link-modal .play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 0, 0, 0.8);
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .open-link-modal .play-btn::before {
+      content: "";
+      display: block;
+      width: 0;
+      height: 0;
+      border-left: 20px solid white;
+      border-top: 12px solid transparent;
+      border-bottom: 12px solid transparent;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 767px) {
+      #yt-frame {
+        height: calc(100vh - 60px) !important;
+      }
+    }
+
+    .yt-modal-content {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      background: transparent;
+      animation: zoomIn 0.3s ease;
+      aspect-ratio: 16 / 9;
+    }
+
+    #yt-frame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 767px) {
+      .yt-modal-content {
+        width: 95%;
+        aspect-ratio: 16 / 9;
+      }
+    }

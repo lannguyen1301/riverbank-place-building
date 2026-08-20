@@ -1,0 +1,251 @@
+<style>
+    /* Container bao bọc Rating và 2 Nút (Giữ nguyên) */
+    .rating-badge-wrapper {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 10px 0 20px 0;
+    }
+
+    .rating-box {
+      display: flex;
+      align-items: center;
+    }
+
+    .building-badges {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Kiểu dáng chung: BỎ BACKGROUND, VIỀN BO TRÒN MỊN (Pill style) */
+    .badge-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 14px;
+      border-radius: 20px;
+      /* Bo tròn viền dạng hình viên thuốc rất hiện đại */
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-decoration: none;
+      white-space: nowrap;
+      background-color: transparent !important;
+      /* Bỏ hoàn toàn background */
+      border: 1.5px solid transparent;
+      /* Độ dày viền 1.5px */
+      transition: all 0.3s ease;
+    }
+
+    /* Nút Hạng A: Viền & chữ màu xanh dương */
+    .badge-class-a {
+      border-color: #135e9c;
+      color: #135e9c !important;
+    }
+
+    /* Hiệu ứng khi di chuột vào Nút Hạng A (Tô nền xanh, chữ trắng) */
+    .badge-class-a:hover {
+      background-color: #135e9c !important;
+      color: #ffffff !important;
+    }
+
+    /* Nút LEED Platinum: Viền & chữ màu xanh lá */
+    .badge-leed {
+      border-color: #2aba9d;
+      color: #2aba9d !important;
+    }
+
+    /* Hiệu ứng khi di chuột vào Nút LEED Platinum (Tô nền xanh lá, chữ trắng) */
+    .badge-leed:hover {
+      background-color: #2aba9d !important;
+      color: #ffffff !important;
+    }
+
+    /* Icon chiếc lá (Tự động ăn theo màu chữ: xanh lá khi thường, trắng khi hover) */
+    .badge-leed .icon-leaf {
+      width: 13px;
+      height: 13px;
+      margin-right: 5px;
+      fill: currentColor;
+    }
+
+    /* Responsive trên điện thoại */
+    @media screen and (max-width: 576px) {
+      .badge-btn {
+        padding: 3px 10px;
+        font-size: 11px;
+      }
+    }
+  </style>
+
+
+
+
+
+/* --- UI: KHỐI DỰ TOÁN CHI PHÍ THUÊ --- */
+.cost-estimate-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.estimate-form-group {
+    margin-bottom: 20px;
+}
+
+.estimate-label {
+    display: block;
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 8px;
+    font-size: 1.4rem;
+}
+
+.estimate-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.estimate-input {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 50px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1.5rem;
+    color: #1e293b;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.estimate-input:focus {
+    border-color: #135e9c;
+    box-shadow: 0 0 0 3px rgba(19, 94, 156, 0.1);
+}
+
+.estimate-unit {
+    position: absolute;
+    right: 15px;
+    font-weight: 600;
+    color: #64748b;
+    font-size: 1.4rem;
+}
+
+/* Khối hiển thị kết quả */
+.estimate-result-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.interior-cost {
+    background: #f0fdf4; /* Nền xanh lá nhạt cho phần nội thất */
+    border-color: #bbf7d0;
+}
+
+.result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.result-item:not(:last-child) {
+    border-bottom: 1px dashed #e2e8f0;
+}
+
+.result-label {
+    color: #475569;
+    font-size: 1.3rem;
+}
+
+.result-value {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #135e9c; /* Màu xanh dương chủ đạo */
+}
+
+.interior-cost .result-value {
+    color: #059669; /* Màu xanh lá cho nội thất */
+}
+
+/* Thông tin tỷ giá */
+.exchange-rate-info {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.exchange-rate-info a {
+    color: #64748b;
+    text-decoration: none;
+    font-style: italic;
+}
+
+.exchange-rate-info a:hover {
+    color: #135e9c;
+    text-decoration: underline;
+}
+
+.highlight-rate {
+    color: #135e9c;
+}
+
+/* Nút bấm */
+.estimate-action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s;
+}
+
+.outline-btn {
+    background: transparent;
+    border: 1px solid #135e9c;
+    color: #135e9c;
+}
+
+.outline-btn:hover {
+    background: #f1f5f9;
+}
+
+.solid-btn {
+    background: #135e9c;
+    border: 1px solid #135e9c;
+    color: #ffffff;
+}
+
+.solid-btn:hover {
+    background: #0e4b7e;
+}
+
+/* Responsive */
+@media screen and (min-width: 768px) {
+    .estimate-action-buttons {
+        flex-direction: row;
+    }
+    .action-btn {
+        flex: 1;
+    }
+}

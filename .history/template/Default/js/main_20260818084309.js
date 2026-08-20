@@ -1,0 +1,22 @@
+import AosModule from "./module/AosModule.js";
+import SwiperModule from "./module/SwiperModule.js";
+import Select2Module from "./module/Select2Module.js";
+import CollapseModule from "./module/CollapseModule.js";
+import HeaderModule from "./module/HeaderModule.js";
+import MobileModule from "./module/MobileModule.js";
+import PopupModule from "./module/PopupModule.js";
+import FancyboxModule from "./module/FancyboxModule.js";
+import BtnToTopModule from "./module/BtnToTopModule.js";
+import AnimatedModule from "./module/AnimatedModule.js";
+window.addEventListener("DOMContentLoaded", () => {
+    AosModule();
+    AnimatedModule();
+    SwiperModule();
+    CollapseModule();
+    HeaderModule();
+    MobileModule();
+    PopupModule();
+    FancyboxModule();
+    BtnToTopModule();
+    Select2Module();
+});

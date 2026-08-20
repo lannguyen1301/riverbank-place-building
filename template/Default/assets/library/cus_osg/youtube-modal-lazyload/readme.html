@@ -1,0 +1,20 @@
+<h1>Hướng dẫn sử dụng youtube-modal-lazyload by Long Orion</h1>
+
+<p>1. Chèn mã sau vào vị trí bạn muốn hiển thị video Youtube trong file template của bạn. Với video có ID là VIDEO_ID, bạn thay thế bằng ID video của bạn. Ví dụ: https://www.youtube.com/watch?v=VIDEO_ID thì bạn chỉ cần lấy phần VIDEO_ID.</p>
+
+<iframe src="https://www.youtube.com/embed/VIDEO_ID"></iframe>
+
+<p>2. Đoạn Modal và gọi JS, CSS vào cuối file template của bạn. Bạn có thể thay đổi kích thước của iframe trong CSS nếu cần thiết.</p>
+
+<!-- Modal -->
+<div id="yt-modal" class="yt-modal" style="display:none;">
+    <div class="yt-modal-content">
+        <div class="yt-close" id="yt-close">Close ✕</div>
+        <iframe id="yt-frame" width="100%" height="526" frameborder="0" allowfullscreen loading="lazy"></iframe>
+    </div>
+</div>
+<!-- Modal end -->
+
+ <!-- Gọi file JS và CSS -->
+<link rel="stylesheet" href="./youtube-modal.css">
+<script defer src="./youtube-modal.js"></script>
